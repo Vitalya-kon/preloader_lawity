@@ -1,0 +1,19 @@
+.pb-progress{
+  height: 100px;
+  top: 0px;
+}
+.pb-progress img{
+  width: 200px;
+  height: 100px;
+}
+.pb-background img{
+  width: 200px;
+  height: 100px;
+}
+#progressBarText{
+  margin-top: 10px;
+  font-family: "Mulish", sans-serif;
+  /* text-align: center; */
+  margin-left: 8%;
+  
+}

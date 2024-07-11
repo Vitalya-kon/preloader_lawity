@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ga+Maamli&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Kalam:wght@300;400;700&family=Poetsen+One&display=swap" rel="stylesheet">
+      <!-- Подключение CSS для jQuery UI -->
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/ProgressBar-master/src/progressbar.css">
+
+    <!-- Подключение jQuery и jQuery UI -->
+    <script  src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- <script  src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script> -->
+    <script src="/ProgressBar-master/src/jquery.progressbar.js"></script>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div style="width: 100%; height: 100vh; display: flex; justify-content: center; align-items: center">
+        <div>
+            <div id="progressBarImg"></div>
+            <div id="progressBarText"> 
+                <span >Создание аккаунта</span><span id="dots"></span>
+            </div>
+        </div>
+    </div>
+    
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var duckbar1 = $("#progressBarImg").progressBar({
+                imageUrl: "/img/Lawity_logo500-300.png",
+                backgroundImageUrl:'/img//Lawity_logo500-300_gray.png',
+                imageHeight: 100,
+                imageWidth: 200,
+            });
+            SimulateProgress(duckbar1, 0);
+
+            var dots = window.setInterval( function() {
+                var wait = $('#dots');
+                if ( wait.html().length > 3 ) 
+                    wait.html('');
+                else 
+                    wait.html(wait.html() + '.');
+            }, 500);
+        });
+
+        function SimulateProgress(progressBar, currentValue) {
+            var increase = getRandomInt(0, 3);
+            var newValue = currentValue + increase;
+            if (newValue > 100) newValue = 100;
+            if (currentValue == 100) newValue = 0;
+            progressBar.SetPercentage(newValue);
+            setTimeout(function () {
+                SimulateProgress(progressBar, newValue);
+            }, 80);
+        }
+
+        function getRandomInt(min, max) {
+            min = Math.ceil(min);
+            max = Math.floor(max);
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+    </script>
+</body>
+
+</html>
