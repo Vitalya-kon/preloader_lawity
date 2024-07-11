@@ -50,14 +50,14 @@
         });
 
         function SimulateProgress(progressBar, currentValue) {
-            var increase = getRandomInt(0, 3);
+            var increase = getRandomInt(0, 1);
             var newValue = currentValue + increase;
             if (newValue > 100) newValue = 100;
             if (currentValue == 100) newValue = 0;
             progressBar.SetPercentage(newValue);
             setTimeout(function () {
                 SimulateProgress(progressBar, newValue);
-            }, 80);
+            }, 50);
         }
 
         function getRandomInt(min, max) {

@@ -22,7 +22,7 @@ var ProgressBar = function(settings) {
         if (value > 100) value = 100;
         if (value < 0) value = 0;
         var toShowAmount = (settings.imageWidth / 100) * value;
-        $(self.element).find('.pb-progress').width(toShowAmount);
+        $(self.element).find('.pb-progress').stop().animate({width: toShowAmount}, 500);
     };
 }
 
