@@ -1,14 +1,14 @@
 .pb-progress{
-  height: 100px;
+  height: 110px;
   top: 0px;
 }
 .pb-progress img{
   width: 200px;
-  height: 100px;
+  height: 110px;
 }
 .pb-background img{
   width: 200px;
-  height: 100px;
+  height: 110px;
 }
 #progressBarText{
   margin-top: 10px;
